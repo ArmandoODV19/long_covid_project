@@ -25,3 +25,13 @@ modelos_les_ar <- glm(disease~age+sex+smell_disorders+fatigue+myalgias+arthralgi
                       family = binomial, data = les_ar)
 
 
+# resumen modelo
+
+summary(modelos_les_ar)
+
+# generando coeficientes
+
+coef(modelos_les_ar)
+exp(coef(modelos_les_ar))
+exp(confint(modelos_les_ar))
+coeficientes_modelo_les_ar <- cbind(coef(modelos_les_ar),odds_ratio=exp(coef(modelos_les_ar)),exp(confint(modelos_les_ar)))
