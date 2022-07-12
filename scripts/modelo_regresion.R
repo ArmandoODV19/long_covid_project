@@ -17,3 +17,11 @@ les_ar$depression <- as.factor(les_ar$depression)
 les_ar$hair_loss <- as.factor(les_ar$hair_loss)
 les_ar$dyspnoea <- as.factor(les_ar$dyspnoea)
 les_ar$memory_alterations <- as.factor(les_ar$memory_alterations)
+
+
+# realizando modelo, tomando disease como variable independiente
+
+modelos_les_ar <- glm(disease~age+sex+smell_disorders+fatigue+myalgias+arthralgias+palpitations+taste_disorders+skin_lesions+headache+depression+hair_loss+dyspnoea+memory_alterations,
+                      family = binomial, data = les_ar)
+
+
